@@ -1,0 +1,6 @@
+export { HomeIcon } from './HomeIcon'
+export { InventoryIcon } from './InventoryIcon'
+export { RecipesIcon } from './RecipesIcon'
+export { ShoppingListIcon } from './ShoppingListIcon'
+export { LogoutIcon } from './LogoutIcon'
+export { SettingsIcon } from './SettingsIcon'
