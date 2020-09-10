@@ -1,0 +1,23 @@
+{
+  "name": "beer-tracker",
+  "version": "1.0.0",
+  "description": "Beer tracking app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ancahuiban/beer-tracker.git"
+  },
+  "author": "Anca Huiban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ancahuiban/beer-tracker/issues"
+  },
+  "homepage": "https://github.com/ancahuiban/beer-tracker#readme",
+  "keywords": [
+    "beer",
+    "caps"
+  ]
+}
