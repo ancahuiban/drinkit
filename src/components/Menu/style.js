@@ -22,16 +22,22 @@ export const MainButton = styled.a`
   ${({
     theme: {
       colors: { primary, accent },
+      boxShadow: { mainButton },
     },
   }) =>
     `
-    transform: translateY(-40px);
+    transform: translateY(-55px);
     z-index:1;
     color: ${accent};
     width: 90px;
     height: 90px;
     border-radius: 50%;
     background-color: ${primary};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:${mainButton};
+    border: 8px solid white;
   `}
 `;
 
@@ -42,6 +48,8 @@ export const Tab = styled.a`
       boxShadow: { menuMobile },
     },
   }) => `
+  display: flex;
+  align-items: center;
   text-decoration: none;
   margin: ${x1};
   width: calc(100% * 1/3);

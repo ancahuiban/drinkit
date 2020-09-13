@@ -19,7 +19,11 @@ export const MenuTabs = () => (
       `;
 
       if (!name) {
-        return <MainButton href={link} />;
+        return (
+          <MainButton href={link}>
+            <StyledIcon />
+          </MainButton>
+        );
       }
       return (
         <Tab key={id} href={link}>

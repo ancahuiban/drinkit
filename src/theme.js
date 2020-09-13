@@ -37,5 +37,6 @@ export const theme = {
     menuDesktop:
       "0px 8px 12px rgba(0,0,0,0.2), 0px 6px 4px rgba(0,0,0,0.12), 0px 10px 12px rgba(0,0,0,0.14)",
     menuMobile: "0px 2px 6px 2px rgba(153,150,153,0.46)",
+    mainButton: "0px 4px 5px 0px rgba(153,150,153,0.46)",
   },
 };
