@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Tab,
-  TabText,
-  MainButton,
-  StyledIcon,
-  IconContainer,
-} from "./style";
+import { Container, Tab, MainButton, IconContainer } from "./style";
 import { mainMenu } from "./constants";
 import styled from "styled-components";
 

@@ -10,7 +10,11 @@ import "./index.css";
 import { theme } from "./theme";
 import { ThemeProvider } from "styled-components";
 import { AppContextProvider } from "./AppContext";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  //  Route
+} from "react-router-dom";
 // import { Home, Inventory, Recipes, ShoppingList } from "./screens";
 import { PageContainer } from "./PageContainer";
 
