@@ -4,53 +4,46 @@ import {
   RecipesIcon,
   ShoppingListIcon,
   LogoutIcon,
-  SettingsIcon
-} from '../../assets/MenuIcons'
-import UserPhoto from '../../assets/UserPlaceholder.png'
+  SettingsIcon,
+} from "../../assets/MenuIcons";
+import UserPhoto from "../../assets/UserPlaceholder.png";
 
 export const mainMenu = [
   {
     id: 1,
-    name: 'Home',
+    name: "Dashboard",
     Icon: HomeIcon,
-    link: '/'
+    link: "/",
   },
   {
     id: 2,
-    name: 'Inventory',
-    Icon: InventoryIcon,
-    link: '/inventory'
+    // Icon: InventoryIcon,
+    link: "/add-beer",
   },
   {
     id: 3,
-    name: 'Recipes',
-    Icon: RecipesIcon,
-    link: '/recipes'
-  },
-  {
-    id: 4,
-    name: 'Shopping',
+    name: "List",
     Icon: ShoppingListIcon,
-    link: '/shopping-list'
-  }
-]
+    link: "/see-beers",
+  },
+];
 
 export const secondaryMenu = [
   {
     id: 1,
-    name: 'Settings',
+    name: "Settings",
     Icon: SettingsIcon,
-    link: '/settings'
+    link: "/settings",
   },
   {
     id: 2,
-    name: 'Log out',
+    name: "Log out",
     Icon: LogoutIcon,
-    link: '/sign-in'
-  }
-]
+    link: "/sign-in",
+  },
+];
 
 export const userDetails = {
-  name: 'Anca',
-  avatar: UserPhoto
-}
+  name: "Anca",
+  avatar: UserPhoto,
+};
