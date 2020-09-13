@@ -1,29 +1,29 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import { Logo } from "../../assets/Logo";
 
 export const Container = styled.div`
   ${({
     theme: {
       colors: { primary },
-      spaces: { x7 },
-      boxShadow: { header }
-    }
+      spaces: { x8 },
+      boxShadow: { header },
+    },
   }) => `
 background-color: ${primary};
 display: flex;
 justify-content: center;
 align-items: center;
-height:${x7};
+height:${x8};
 box-shadow:${header};
 `}
-`
+`;
 
-export const LogoStyled = styled.img`
+export const LogoStyled = styled(Logo)`
   ${({
     theme: {
-      spaces: { x6 }
-    }
+      spaces: { x7 },
+    },
   }) => `
-width: 150px;
-height: ${x6};
+width: 160px;
 `}
-`
+`;

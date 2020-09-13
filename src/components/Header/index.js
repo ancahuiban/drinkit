@@ -1,9 +1,10 @@
-import React from 'react'
-import { Container, LogoStyled } from './style'
-import Logo from '../../assets/LogoWhite.svg'
+import React from "react";
+import { Container, LogoStyled } from "./style";
+import { Logo } from "../../assets/Logo";
 
 export const Header = () => (
   <Container>
-    <LogoStyled src={Logo} alt="Logo" />
+    <LogoStyled />
+    {/* <LogoStyled src={Logo} alt="Logo" /> */}
   </Container>
-)
+);

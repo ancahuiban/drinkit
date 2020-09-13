@@ -7,11 +7,10 @@ export const PageContainer = ({ children }) => {
   const { isMobile } = useContext(AppContext);
   return (
     <MainPage>
-      {!isMobile && <Drawer />}
       <MainContent>
         <Header />
         <ContentContainer>{children}</ContentContainer>
-        {isMobile && <MenuTabs />}
+        <MenuTabs />
       </MainContent>
     </MainPage>
   );
