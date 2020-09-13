@@ -5,7 +5,7 @@ const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
   const getSize = () => ({
     isDesktop: window.innerWidth >= 1440,
-    isTablet: window.innerWidth >= 768,
+    isTablet: window.innerWidth <= 1024,
     isMobile: window.innerWidth < 768,
   });
   const [device, setDevice] = useState(getSize());

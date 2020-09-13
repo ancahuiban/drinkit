@@ -6,6 +6,22 @@ export const MainPage = styled.div`
   width: 100vw;
 `;
 
+export const UnsupportPage = styled(MainPage)`
+  ${({
+    theme: {
+      colors: { primary, textLight },
+    },
+  }) => `
+      background-color: ${primary};
+      color: ${textLight};
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    `}
+`;
+
 export const MainContent = styled(MainPage)`
   flex-direction: column;
 `;

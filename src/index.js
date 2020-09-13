@@ -10,12 +10,8 @@ import "./index.css";
 import { theme } from "./theme";
 import { ThemeProvider } from "styled-components";
 import { AppContextProvider } from "./AppContext";
-import {
-  BrowserRouter as Router,
-  Switch,
-  //  Route
-} from "react-router-dom";
-// import { Home, Inventory, Recipes, ShoppingList } from "./screens";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BeerList, Dashboard, AddBeer } from "./screens";
 import { PageContainer } from "./PageContainer";
 
 const App = () => {
@@ -30,10 +26,9 @@ const App = () => {
       <PageContainer>
         <Router>
           <Switch>
-            {/* <Route exact path="/" component={Home} /> */}
-            {/* <Route path="/inventory" component={Inventory} />
-              <Route path="/recipes" component={Recipes} />
-              <Route path="/shopping-list" component={ShoppingList} /> */}
+            <Route exact path="/" component={Dashboard} />
+            <Route path="/see-beers" component={BeerList} />
+            <Route path="/add-beer" component={AddBeer} />
           </Switch>
         </Router>
       </PageContainer>

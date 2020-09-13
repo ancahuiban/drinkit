@@ -3,6 +3,6 @@ import { Container, LogoStyled } from "./style";
 
 export const Header = () => (
   <Container>
-    <LogoStyled />
+    <LogoStyled width="160" />
   </Container>
 );

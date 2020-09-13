@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Logo = () => (
+export const Logo = ({ width }) => (
   <svg
     data-v-423bf9ae=""
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 388 112"
     className="iconLeft"
-    width="160"
+    width={width}
   >
     <g
       data-v-423bf9ae=""
