@@ -1,29 +1,24 @@
-import {
-  HomeIcon,
-  InventoryIcon,
-  RecipesIcon,
-  ShoppingListIcon,
-  LogoutIcon,
-  SettingsIcon,
-} from "../../assets/MenuIcons";
 import UserPhoto from "../../assets/UserPlaceholder.png";
+import { CameraRetro } from "@styled-icons/fa-solid/CameraRetro";
+import { ClipboardList } from "@styled-icons/fa-solid/ClipboardList";
+import { Dashboard } from "@styled-icons/material-rounded/Dashboard";
 
 export const mainMenu = [
   {
     id: 1,
     name: "Dashboard",
-    Icon: HomeIcon,
+    Icon: Dashboard,
     link: "/",
   },
   {
     id: 2,
-    // Icon: InventoryIcon,
+    Icon: CameraRetro,
     link: "/add-beer",
   },
   {
     id: 3,
     name: "List",
-    Icon: ShoppingListIcon,
+    Icon: ClipboardList,
     link: "/see-beers",
   },
 ];
@@ -32,13 +27,11 @@ export const secondaryMenu = [
   {
     id: 1,
     name: "Settings",
-    Icon: SettingsIcon,
     link: "/settings",
   },
   {
     id: 2,
     name: "Log out",
-    Icon: LogoutIcon,
     link: "/sign-in",
   },
 ];

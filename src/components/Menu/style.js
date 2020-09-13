@@ -1,16 +1,15 @@
 import styled from "styled-components";
-import { IconText } from "../Drawer/style";
 
 export const Container = styled.div`
   ${({
     theme: {
-      spaces: { x1, x4, x10 },
+      spaces: { x8 },
       boxShadow: { menuMobile },
     },
   }) => `
   display: flex;
   justify-content: space-between;
-  height: ${x10};
+  height: ${x8};
   z-index:1;
   box-shadow:${menuMobile};
   bottom:0;
@@ -44,22 +43,24 @@ export const Tab = styled.a`
     },
   }) => `
   text-decoration: none;
+  margin: ${x1};
+  width: calc(100% * 1/3);
+  height: auto;
+  `}
+`;
+
+export const IconContainer = styled.div`
+  ${({
+    theme: {
+      spaces: { x3 },
+      colors: { primary },
+    },
+  }) => `
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: ${x1};
-  width: calc(100% * 1/3);
-  `}
-`;
-
-export const TabText = styled(IconText)`
-  ${({
-    theme: {
-      colors: { textPrimary },
-    },
-  }) => `
-  text-align: center;
-  color: ${textPrimary}
+  width: 100%;
+  color: ${primary};
 `}
 `;
