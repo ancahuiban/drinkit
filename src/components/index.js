@@ -1,3 +1,3 @@
-export { Drawer } from './Menu'
-export { Header } from './Header'
-export { MenuTabs } from './Menu/MenuTab'
+export { Drawer } from "./Drawer";
+export { Header } from "./Header";
+export { MenuTabs } from "./Menu";
