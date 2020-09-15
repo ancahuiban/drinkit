@@ -72,3 +72,7 @@ export const IconContainer = styled.div`
   color: ${primary};
 `}
 `;
+
+export const Input = styled.input`
+  display: none;
+`;
