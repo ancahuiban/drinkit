@@ -23,15 +23,15 @@ const App = () => {
   return (
     // <ApolloProvider client={client}>
     <ThemeProvider theme={theme}>
-      <PageContainer>
-        <Router>
+      <Router>
+        <PageContainer>
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/see-beers" component={BeerList} />
             <Route path="/add-beer" component={AddBeer} />
           </Switch>
-        </Router>
-      </PageContainer>
+        </PageContainer>
+      </Router>
     </ThemeProvider>
     // </ApolloProvider>
   );
