@@ -5,8 +5,13 @@ import styled from "styled-components";
 import { AppContext } from "../../AppContext";
 import { useHistory } from "react-router-dom";
 
+import { CameraRetro } from "@styled-icons/fa-solid/CameraRetro";
+import { Crop } from "@styled-icons/fa-solid/Crop";
+
 export const MenuTabs = () => {
-  const { setPhoto } = useContext(AppContext);
+  const { setPhoto, photo, isPhotoCropped, setIsPhotoCropped } = useContext(
+    AppContext
+  );
   const inputRef = useRef();
   const history = useHistory();
 
@@ -24,7 +29,12 @@ export const MenuTabs = () => {
   return (
     <Container>
       {mainMenu.map(({ name, Icon, link, id }) => {
-        const StyledIcon = styled(Icon)`
+        const DynamicIcons = () => {
+          if (!name && !photo) return CameraRetro;
+          if (!name && photo && !isPhotoCropped) return Crop;
+          return Icon;
+        };
+        const StyledIcon = styled(DynamicIcons())`
           width: 40px;
           height: 40px;
         `;
