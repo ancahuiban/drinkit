@@ -11,6 +11,8 @@ const AppContextProvider = ({ children }) => {
   const [device, setDevice] = useState(getSize());
   const [drawerOpen, setdrawerOpen] = useState(false);
 
+  const [photo, setPhoto] = useState("");
+
   useEffect(() => {
     const handleResize = () => setDevice(getSize());
     window.addEventListener("resize", handleResize);
@@ -18,6 +20,8 @@ const AppContextProvider = ({ children }) => {
   }, []);
 
   const defaultContext = {
+    photo,
+    setPhoto,
     drawerOpen,
     setdrawerOpen,
     ...device,
