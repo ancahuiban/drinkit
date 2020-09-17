@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { Container, Tab, MainButton, IconContainer, Input } from "./style";
 import { mainMenu } from "./constants";
 import styled from "styled-components";
@@ -15,14 +15,31 @@ export const MenuTabs = () => {
   const inputRef = useRef();
   const history = useHistory();
 
+  const [selectCrop, setSelectCrop] = useState(false);
+
+  const finishCropping = () => {
+    setSelectCrop(false);
+    setIsPhotoCropped(true);
+  };
   const selectPhoto = (e) => {
-    window.addEventListener("click", () => {
+    selectCrop
+      ? finishCropping()
+      : window.addEventListener(
+          "click",
+          () => {
+            inputRef.current.click();
+          },
+          { once: true }
+        );
+
+    return window.removeEventListener("click", () => {
       inputRef.current.click();
     });
   };
 
   const previewPhoto = (link) => (e) => {
-    setPhoto(URL.createObjectURL(e.target.files[0]));
+    setSelectCrop(true);
+    setPhoto(e.target.files[0]);
     history.push(link);
   };
 
