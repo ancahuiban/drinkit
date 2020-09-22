@@ -9,6 +9,7 @@ const AddBeer = () => {
   const { photo, isPhotoCropped } = useContext(AppContext);
   const [cropDetails, setCropDetails] = useState({ x: 0, y: 0 });
   const [pixels, setPixels] = useState({ width: 0, height: 0 });
+  const [zoom, setZoom] = useState(1);
   const fr = new FileReader();
 
   const draw = () => {
@@ -47,8 +48,10 @@ const AddBeer = () => {
             image={photo && URL.createObjectURL(photo)}
             crop={cropDetails}
             aspect={1}
+            zoom={zoom}
             onCropComplete={onCropComplete}
             onCropChange={(c) => setCropDetails(c)}
+            onZoomChange={(z) => setZoom(z)}
             cropShape="round"
             showGrid={false}
             className={style.reactEasyCrop_Container}
