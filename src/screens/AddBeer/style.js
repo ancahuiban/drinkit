@@ -23,9 +23,15 @@ export const CropperContainer = styled.div`
 `;
 
 export const CanvasContainer = styled.div`
-  ${({ isCropped }) => `
+  ${({
+    theme: {
+      spaces: { x3 },
+    },
+    isCropped,
+  }) => `
   display: ${isCropped ? "flex" : "none"};
   justify-content: center;
+  padding: ${x3} 0;
   `}
 `;
 
@@ -33,9 +39,23 @@ export const Canvas = styled.canvas`
   ${({
     theme: {
       colors: { primary },
+      spaces: { x3 },
     },
   }) => `
   border-radius:50%;
   border: 2px solid ${primary};
+  `}
+`;
+
+export const ButtonContainer = styled.div`
+  ${({
+    theme: {
+      spaces: { x3 },
+    },
+  }) => `
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: ${x3} 0;
   `}
 `;
