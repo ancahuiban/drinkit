@@ -3,14 +3,17 @@ import { AppContext } from "../../AppContext";
 import Cropper from "react-easy-crop";
 import { Container } from "./style";
 import style from "./style.scss";
+import AddBeerInfo from "./AddBeerInfo";
 
 const AddBeer = () => {
   let canvasRef = useRef();
-  const { photo, isPhotoCropped } = useContext(AppContext);
+  const { photo, isPhotoCropped, isMobile } = useContext(AppContext);
   const [cropDetails, setCropDetails] = useState({ x: 0, y: 0 });
   const [pixels, setPixels] = useState({ width: 0, height: 0 });
   const [zoom, setZoom] = useState(1);
   const fr = new FileReader();
+
+  const croppedSize = isMobile ? 220 : 300;
 
   const draw = () => {
     let canvas = canvasRef && canvasRef.current;
@@ -26,11 +29,11 @@ const AddBeer = () => {
           pixels.height,
           0,
           0,
-          300,
-          300
+          croppedSize,
+          croppedSize
         );
       };
-      setPixels({ width: 300, height: 300 });
+      setPixels({ width: croppedSize, height: croppedSize });
       img.src = fr.result;
     };
     fr.readAsDataURL(photo);
@@ -58,17 +61,7 @@ const AddBeer = () => {
           />
         </Container>
       )}
-      <div
-        className={style.canvasContainer}
-        style={isPhotoCropped ? {} : { display: "none" }}
-      >
-        <canvas
-          ref={canvasRef}
-          width={pixels.width}
-          height={pixels.height}
-          className={style.reactEasyCrop_Image}
-        />
-      </div>
+      <AddBeerInfo pixels={pixels} canvasRef={canvasRef} />
     </>
   );
 };
