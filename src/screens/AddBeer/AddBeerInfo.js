@@ -25,9 +25,12 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
       </CanvasContainer>
       {isPhotoCropped && (
         <>
-          <Subtitle text="You added the cap design, thrus completing the 1st step. Follow the steps and add the remaining informations about the beverage!" />
+          <Subtitle
+            align="center"
+            text="You added the cap design, thrus completing the 1st step. Follow the steps and add the remaining informations about the beverage!"
+          />
           <PrimaryButton text="Schimba poza" onClick={() => {}} />
-          <PrimaryButton text="Pasul urmator" onClick={() => {}} />
+          <PrimaryButton text="Pasul urmator" isYellow onClick={() => {}} />
         </>
       )}
     </Container>

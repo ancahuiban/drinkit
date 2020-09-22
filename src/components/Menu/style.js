@@ -15,6 +15,7 @@ export const Container = styled.div`
   bottom:0;
   position:fixed;
   width: 100vw;
+  background-color: white;
   `}
 `;
 
