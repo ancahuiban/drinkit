@@ -1,6 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  ${({
+    theme: {
+      colors: { primary, lightPrimary },
+      spaces: { x2 },
+    },
+  }) => `
+display: flex;
+background: ${lightPrimary}; 
+flex-direction: column;
+padding : ${x2};
+height: 100%;
+`}
+`;
+
+export const CropperContainer = styled.div`
   width: 100% !important;
   height: 100% !important;
 
@@ -11,7 +26,6 @@ export const CanvasContainer = styled.div`
   ${({ isCropped }) => `
   display: ${isCropped ? "flex" : "none"};
   justify-content: center;
-
   `}
 `;
 

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 import Cropper from "react-easy-crop";
-import { Container } from "./style";
+import { CropperContainer } from "./style";
 import style from "./style.scss";
 import AddBeerInfo from "./AddBeerInfo";
 
@@ -46,7 +46,7 @@ const AddBeer = () => {
   return (
     <>
       {!isPhotoCropped && (
-        <Container>
+        <CropperContainer>
           <Cropper
             image={photo && URL.createObjectURL(photo)}
             crop={cropDetails}
@@ -59,7 +59,7 @@ const AddBeer = () => {
             showGrid={false}
             className={style.reactEasyCrop_Container}
           />
-        </Container>
+        </CropperContainer>
       )}
       <AddBeerInfo pixels={pixels} canvasRef={canvasRef} />
     </>

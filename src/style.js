@@ -32,8 +32,7 @@ export const ContentContainer = styled.div`
       spaces: { x2, x4, x7 },
     },
   }) => `
-  padding : ${x2};
-  width: calc( 100vw - ${x4} );
-  height: calc( 100vh - ${x7} - ${x4});
+  // width: calc( 100vw - ${x4} );
+  height: calc( 100vh - ${x7});
   `}
 `;
