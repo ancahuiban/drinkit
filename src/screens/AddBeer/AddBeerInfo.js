@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 import { CanvasContainer, Canvas, Container, ButtonContainer } from "./style";
-import { Subtitle, PrimaryButton as Button } from "../../components";
+import { Subtitle, PrimaryButton as Button, Steps } from "../../components";
 
 const AddBeerInfo = ({ pixels, canvasRef }) => {
   const { isPhotoCropped } = useContext(AppContext);
@@ -20,7 +20,12 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
 
   return (
     <Container>
-      {isPhotoCropped && <div> Step {step} </div>}
+      {isPhotoCropped && (
+        <div>
+          Step {step}
+          <Steps />
+        </div>
+      )}
       {step === 1 && (
         <CanvasContainer isCropped={isPhotoCropped}>
           <Canvas ref={canvasRef} width={pixels.width} height={pixels.height} />

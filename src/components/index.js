@@ -1,7 +1,8 @@
 import { Header } from "./Header";
 import { MenuTabs } from "./Menu";
-import { PrimaryButton } from "./Button";
+import { PrimaryButton } from "./Buttons";
 import { Title, Subtitle, Paragraph, Button as TextButton } from "./Typography";
+import { Steps } from "./Steps";
 
 export {
   Header,
@@ -11,4 +12,5 @@ export {
   Paragraph,
   Subtitle,
   TextButton,
+  Steps,
 };
