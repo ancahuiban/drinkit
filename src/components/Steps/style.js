@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Check } from "@styled-icons/boxicons-regular/Check";
 
 export const Container = styled.div`
   ${({
@@ -48,5 +49,18 @@ export const Line = styled.div`
   width: 100%;
   height: calc(${x1} / 2);
   background: ${darkPrimary};
+  `}
+`;
+
+export const Checked = styled(Check)`
+  ${({
+    theme: {
+      spaces: { x4 },
+      colors: { darkPrimary },
+    },
+  }) => `
+  width: ${x4};
+  height: ${x4};
+  color: ${darkPrimary};
   `}
 `;

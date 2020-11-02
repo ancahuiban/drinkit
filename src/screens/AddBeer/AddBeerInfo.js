@@ -20,12 +20,7 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
 
   return (
     <Container>
-      {isPhotoCropped && (
-        <div>
-          Step {step}
-          <Steps />
-        </div>
-      )}
+      {isPhotoCropped && <Steps step={step} />}
       {step === 1 && (
         <CanvasContainer isCropped={isPhotoCropped}>
           <Canvas ref={canvasRef} width={pixels.width} height={pixels.height} />

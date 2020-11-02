@@ -1,13 +1,13 @@
 import React from "react";
-import { Container, Dot, Line } from "./style";
+import { Container, Dot, Line, Checked } from "./style";
 
-export const Steps = () => {
+export const Steps = ({ step }) => {
   const steps = [1, 2, 3, 4];
   return (
     <Container>
       <Line />
       {steps.map((el, id) => (
-        <Dot dots={el.length}> {el} </Dot>
+        <Dot dots={steps.length}> {el <= step ? <Checked /> : el} </Dot>
       ))}
     </Container>
   );

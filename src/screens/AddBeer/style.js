@@ -4,7 +4,7 @@ export const Container = styled.div`
   ${({
     theme: {
       colors: { primary, lightPrimary },
-      spaces: { x2 },
+      spaces: { x2, x8 },
     },
   }) => `
 display: flex;
@@ -12,6 +12,7 @@ background: ${lightPrimary};
 flex-direction: column;
 padding : ${x2};
 height: 100%;
+margin-bottom: ${x8};
 `}
 `;
 
