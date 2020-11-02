@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 import { CanvasContainer, Canvas, Container, ButtonContainer } from "./style";
-import { Subtitle } from "../../components/Typography";
-import { PrimaryButton } from "../../components/Button";
+import { Subtitle, PrimaryButton as Button } from "../../components";
 
 const AddBeerInfo = ({ pixels, canvasRef }) => {
   const { isPhotoCropped } = useContext(AppContext);
@@ -36,9 +35,9 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
                 text="You uploaded the cap, thrus completing the 1st step. Follow the steps and add the remaining informations about the beverage!"
               />
               <ButtonContainer>
-                <PrimaryButton text="Schimba poza" onClick={() => {}} />
-                <PrimaryButton
-                  text="Pasul urmator"
+                <Button text="Change the photo" onClick={() => {}} />
+                <Button
+                  text="Next step"
                   isYellow
                   onClick={() => setStep(step + 1)}
                 />
