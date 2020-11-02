@@ -1,11 +1,13 @@
 import React from "react";
-import { Container, Dot } from "./style";
+import { Container, Dot, Line } from "./style";
 
 export const Steps = () => {
+  const steps = [1, 2, 3, 4];
   return (
     <Container>
-      {[1, 2, 3, 4].map((el, id) => (
-        <Dot> {el} </Dot>
+      <Line />
+      {steps.map((el, id) => (
+        <Dot dots={el.length}> {el} </Dot>
       ))}
     </Container>
   );
