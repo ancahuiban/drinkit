@@ -10,8 +10,8 @@ export const Input = ({ type = "text", placeholder, value, onChange }) => (
   />
 );
 
-export const Select = ({ options, selectVal = "from below" }) => (
-  <InputContainer as="select">
+export const Select = ({ options, selectVal = "from below", onChange }) => (
+  <InputContainer as="select" onChange={onChange}>
     <Option selected="selected" disabled="disabled">
       Select {selectVal}
     </Option>

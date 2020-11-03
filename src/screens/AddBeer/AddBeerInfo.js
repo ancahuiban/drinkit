@@ -1,30 +1,32 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../../AppContext";
 import { CanvasContainer, Canvas, Container, ButtonContainer } from "./style";
 import {
   Subtitle,
   PrimaryButton as Button,
   Steps,
-  Input,
-  Select,
+  // Input,
+  // Select,
 } from "../../components";
+import { Inputs as Input } from "./AddBeerInputs";
 import { useHistory } from "react-router-dom";
+
+import { useQuery } from "react-apollo";
+import { getBeverageTypes } from "../../graphql/queries";
 
 const AddBeerInfo = ({ pixels, canvasRef }) => {
   const { isPhotoCropped } = useContext(AppContext);
   const history = useHistory();
+  const { data, loading } = useQuery(getBeverageTypes);
 
   const [step, setStep] = useState(1);
   const [formInfo, setFormInfo] = useState({
     beverageType: "",
     brandName: "",
     edition: "",
-    beerType: "",
     origin: "",
     alcoholPercentage: null,
     score: null,
-    notes: [],
-    observations: "",
   });
 
   const onInputChange = (key) => (e) =>
@@ -51,36 +53,58 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
           )}
           {step === 2 && (
             <>
-              <Subtitle align="center" text="What type of beverage is it?" />
-              <Select options={["ala", "bala", "portocala"]} />
-              <Subtitle align="center" text="What assortment does it have?" />
-              <Select options={["ala", "bala", "portocala"]} />
+              <Input
+                isSelect
+                text="What type of beverage is it?"
+                onChange={onInputChange("beverageType")}
+                options={
+                  loading ? [] : data.getBeverageTypes.map((e) => e.name)
+                }
+              />
+              <Input
+                isSelect
+                text="What assortment does it have?"
+                onChange={onInputChange("assortment")}
+                options={
+                  loading && formInfo.beverageType === ""
+                    ? []
+                    : data.getBeverageTypes
+                        .map(({ name, assortments }) => {
+                          if (name === formInfo.beverageType)
+                            return assortments.map((e) => e.name);
+                        })
+                        .flat()
+                }
+              />
             </>
           )}
           {step === 3 && (
             <>
-              <Subtitle align="center" text="What's the brand name?" />
               <Input
+                text="What's the brand name?"
                 value={formInfo.brandName}
                 onChange={onInputChange("brandName")}
               />
-              <Subtitle align="center" text="What edition is it?" />
               <Input
+                text="What edition is it?"
                 value={formInfo.edition}
                 onChange={onInputChange("edition")}
               />
-              <Subtitle align="center" text="Where was this drink born?" />
               <Input
+                text="Where was this drink born?"
                 value={formInfo.origin}
                 onChange={onInputChange("origin")}
               />
-              <Subtitle align="center" text="What's the alcohol percentage?" />
               <Input
+                text="What's the alcohol percentage?"
                 value={formInfo.alcoholPercentage}
                 onChange={onInputChange("alcoholPercentage")}
               />
-              <Subtitle align="center" text="How would you rate this drink?" />
-              <Input value={formInfo.score} onChange={onInputChange("score")} />
+              <Input
+                value={formInfo.score}
+                onChange={onInputChange("score")}
+                text="How would you rate this drink?"
+              />
             </>
           )}
           {step === 4 && (

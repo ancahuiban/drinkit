@@ -30,7 +30,7 @@ export const getBeverage = gql`
   }
 `;
 
-export const getBeveragesTypes = gql`
+export const getBeverageTypes = gql`
   query {
     getBeverageTypes {
       id
