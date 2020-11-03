@@ -30,10 +30,12 @@ export const ContentContainer = styled.div`
   ${({
     theme: {
       spaces: { x2, x4, x8 },
+      colors: { background },
     },
   }) => `
   // width: calc( 100vw - ${x4} );
   height: calc( 100vh - ${x8});
   overflow-x: auto;
+  background-color: ${background};
   `}
 `;

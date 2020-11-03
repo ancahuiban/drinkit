@@ -1,7 +1,13 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 import { CanvasContainer, Canvas, Container, ButtonContainer } from "./style";
-import { Subtitle, PrimaryButton as Button, Steps } from "../../components";
+import {
+  Subtitle,
+  PrimaryButton as Button,
+  Steps,
+  Input,
+  Select,
+} from "../../components";
 import { useHistory } from "react-router-dom";
 
 const AddBeerInfo = ({ pixels, canvasRef }) => {
@@ -15,8 +21,8 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
     edition: "",
     beerType: "",
     origin: "",
-    alcoholPercentage: 0,
-    score: 0,
+    alcoholPercentage: null,
+    score: null,
     notes: [],
     observations: "",
   });
@@ -40,21 +46,21 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
           {step === 2 && (
             <>
               <Subtitle align="center" text="What type of beverage is it?" />
-              <input />
+              <Select options={["ala", "bala", "portocala"]} />
               <Subtitle align="center" text="What assortment does it have?" />
-              <input />
+              <Select options={["ala", "bala", "portocala"]} />
             </>
           )}
           {step === 3 && (
             <>
               <Subtitle align="center" text="What edition is it?" />
-              <input />
+              <Input value={formInfo.edition} />
               <Subtitle align="center" text="Where was this drink born?" />
-              <input />
+              <Input value={formInfo.origin} />
               <Subtitle align="center" text="What's the alcohol percentage?" />
-              <input />
+              <Input value={formInfo.alcoholPercentage} />
               <Subtitle align="center" text="How would you rate this drink?" />
-              <input />
+              <Input value={formInfo.score} />
             </>
           )}
           {step === 4 && (
@@ -73,7 +79,7 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
               }}
             />
             <Button
-              text="Next step"
+              text={step === 4 ? "Go to library" : "Next step"}
               isYellow
               onClick={() =>
                 step === 4 ? history.push("/see-beers") : setStep(step + 1)

@@ -11,7 +11,6 @@ display: flex;
 background: ${lightPrimary}; 
 flex-direction: column;
 padding : ${x2};
-height: 100%;
 margin-bottom: ${x8};
 `}
 `;
