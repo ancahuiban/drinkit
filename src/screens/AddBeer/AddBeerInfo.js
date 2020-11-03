@@ -27,6 +27,12 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
     observations: "",
   });
 
+  const onInputChange = (key) => (e) =>
+    setFormInfo({ ...formInfo, [key]: e.target.value });
+
+  const onSubmit = () => {};
+
+  console.log(formInfo);
   return (
     <Container>
       {isPhotoCropped && <Steps step={step} />}
@@ -53,14 +59,28 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
           )}
           {step === 3 && (
             <>
+              <Subtitle align="center" text="What's the brand name?" />
+              <Input
+                value={formInfo.brandName}
+                onChange={onInputChange("brandName")}
+              />
               <Subtitle align="center" text="What edition is it?" />
-              <Input value={formInfo.edition} />
+              <Input
+                value={formInfo.edition}
+                onChange={onInputChange("edition")}
+              />
               <Subtitle align="center" text="Where was this drink born?" />
-              <Input value={formInfo.origin} />
+              <Input
+                value={formInfo.origin}
+                onChange={onInputChange("origin")}
+              />
               <Subtitle align="center" text="What's the alcohol percentage?" />
-              <Input value={formInfo.alcoholPercentage} />
+              <Input
+                value={formInfo.alcoholPercentage}
+                onChange={onInputChange("alcoholPercentage")}
+              />
               <Subtitle align="center" text="How would you rate this drink?" />
-              <Input value={formInfo.score} />
+              <Input value={formInfo.score} onChange={onInputChange("score")} />
             </>
           )}
           {step === 4 && (
