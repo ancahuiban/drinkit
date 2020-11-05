@@ -42,9 +42,10 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
   const [step, setStep] = useState(1);
 
   const onInputChange = (key) => (e) =>
-    setFormInfo({ ...formInfo, [key]: e.target.value });
+    key === "score"
+      ? setFormInfo({ ...formInfo, [key]: e })
+      : setFormInfo({ ...formInfo, [key]: e.target.value });
 
-  console.log(cropDetails);
   return (
     <Container>
       <Title text="Add a beverage" align="left" />
@@ -101,6 +102,7 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
                 onChange={onInputChange("alcoholPercentage")}
               />
               <Input
+                isRating
                 value={formInfo.score}
                 onChange={onInputChange("score")}
                 text="How would you rate this drink?"

@@ -4,6 +4,7 @@ import { PrimaryButton } from "./Buttons";
 import { Title, Subtitle, Paragraph, Button as TextButton } from "./Typography";
 import { Steps } from "./Steps";
 import { Input, Select } from "./Inputs";
+import { Rating } from "./RatingStars";
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   Steps,
   Input,
   Select,
+  Rating,
 };

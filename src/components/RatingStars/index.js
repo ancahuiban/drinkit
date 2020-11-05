@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Stars, Star } from "./style";
 
-export const Rating = ({ disabled }) => {
-  const [rating, setRating] = useState(null);
-  const rate = (rating) => setRating(rating);
-
+export const Rating = ({ rating, setRating }) => {
   const stars = [];
 
   for (let i = 0; i < 5; i++) {
     stars.push(
       <Star
         isSelected={rating >= i && rating != null}
-        onTouchStart={() => rate(i)}
+        onTouchStart={() => setRating(i)}
       >
         ★
       </Star>
