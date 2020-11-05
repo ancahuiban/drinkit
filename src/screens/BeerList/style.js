@@ -98,11 +98,53 @@ export const Beverage = styled.div`
   ${({
     theme: {
       colors: { lightPrimary },
-      spaces: { x1 },
+      spaces: { x1, x4 },
+      boxShadow: { cardShadow },
     },
   }) => `
-  background-color: white;
-  height: 100px;
+  margin: ${x4} ${x1} ${x1};
+  background-image:linear-gradient(180deg,transparent -25%,white 80%);
+  height: 140px;
   border-radius: ${x1};
+  box-shadow: ${cardShadow};
   `}
+`;
+
+export const BeverageHeader = styled.div`
+  ${({
+    theme: {
+      colors: { lightPrimary },
+      spaces: { x1 },
+      boxShadow: { cardShadow },
+    },
+  }) => `
+  height: 40%;
+  position: relative;
+  `}
+`;
+
+export const BeverageImg = styled.img`
+  ${({
+    theme: {
+      colors: { lightPrimary },
+    },
+  }) => `
+  position: absolute;
+  height: 100px;
+  border-radius: 50%;
+  bottom: -20px;
+  left: 20px;
+  border: 2px solid ${lightPrimary};
+  `}
+`;
+
+export const BeverageInfo = styled.div`
+  ${({
+    theme: {
+      spaces: { x3 },
+      boxShadow: { cardShadow },
+    },
+  }) => `
+    padding: ${x3};
+`}
 `;

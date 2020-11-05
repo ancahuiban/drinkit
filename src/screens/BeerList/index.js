@@ -8,15 +8,20 @@ import {
   Beverage,
   ActionIcon,
   SearchBar,
+  BeverageInfo,
+  BeverageHeader,
+  BeverageImg,
 } from "./style";
 import { useQuery } from "react-apollo";
 import { getBeverages } from "../../graphql/queries";
-import { Title } from "../../components";
+import { Title, Subtitle } from "../../components";
 
 import {
   Search as SearchIcon,
   Filter as FilterIcon,
 } from "@styled-icons/boxicons-regular";
+
+import UserPlaceholder from "../../assets/UserPlaceholder.png";
 
 const BeerList = () => {
   const { data, loading } = useQuery(getBeverages);
@@ -37,11 +42,21 @@ const BeerList = () => {
       <Beverages>
         {loading
           ? []
-          : data.getBeverages.map(({ name, origin, edition }) => (
-              <Beverage>
-                {name} · {edition} · {origin}
-              </Beverage>
-            ))}
+          : data.getBeverages.map(
+              ({ name, origin, edition, alcoholPercentage }) => (
+                <Beverage>
+                  <BeverageHeader>
+                    <BeverageImg src={UserPlaceholder} />
+                  </BeverageHeader>
+                  <BeverageInfo>
+                    <Subtitle text={name} />
+                    <>
+                      {edition} · {origin} · {alcoholPercentage}% ABV
+                    </>
+                  </BeverageInfo>
+                </Beverage>
+              )
+            )}
       </Beverages>
     </Container>
   );
