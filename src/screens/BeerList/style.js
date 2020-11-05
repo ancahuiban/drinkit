@@ -102,7 +102,7 @@ export const Beverage = styled.div`
       boxShadow: { cardShadow },
     },
   }) => `
-  margin: ${x4} ${x1} ${x1};
+  margin: ${x4} 0px 0px;
   background-image:linear-gradient(180deg,transparent -25%,white 80%);
   height: 140px;
   border-radius: ${x1};

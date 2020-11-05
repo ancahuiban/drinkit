@@ -15,6 +15,7 @@ import {
 import { useQuery } from "react-apollo";
 import { getBeverages } from "../../graphql/queries";
 import { Title, Subtitle } from "../../components";
+import { Rating } from "../../components/RatingStars";
 
 import {
   Search as SearchIcon,
@@ -52,6 +53,7 @@ const BeerList = () => {
                     <Subtitle text={name} />
                     <>
                       {edition} · {origin} · {alcoholPercentage}% ABV
+                      <Rating rate="2" />
                     </>
                   </BeverageInfo>
                 </Beverage>
