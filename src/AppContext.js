@@ -14,6 +14,8 @@ const AppContextProvider = ({ children }) => {
   const [photo, setPhoto] = useState("");
   const [isPhotoCropped, setIsPhotoCropped] = useState(false);
 
+  const [cropDetails, setCropDetails] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
     const handleResize = () => setDevice(getSize());
     window.addEventListener("resize", handleResize);
@@ -27,6 +29,8 @@ const AppContextProvider = ({ children }) => {
     setdrawerOpen,
     isPhotoCropped,
     setIsPhotoCropped,
+    cropDetails,
+    setCropDetails,
     ...device,
   };
 

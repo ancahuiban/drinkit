@@ -7,8 +7,13 @@ import AddBeerInfo from "./AddBeerInfo";
 
 const AddBeer = () => {
   let canvasRef = useRef();
-  const { photo, isPhotoCropped, isMobile } = useContext(AppContext);
-  const [cropDetails, setCropDetails] = useState({ x: 0, y: 0 });
+  const {
+    photo,
+    isPhotoCropped,
+    isMobile,
+    cropDetails,
+    setCropDetails,
+  } = useContext(AppContext);
   const [pixels, setPixels] = useState({ width: 0, height: 0 });
   const [zoom, setZoom] = useState(1);
   const fr = new FileReader();
@@ -43,6 +48,7 @@ const AddBeer = () => {
     setPixels(croppedAreaPixels);
     draw();
   };
+  console.log(pixels.x, pixels.y);
   return (
     <>
       {!isPhotoCropped && (

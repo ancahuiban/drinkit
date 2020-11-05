@@ -15,9 +15,20 @@ import { useQuery } from "react-apollo";
 import { getBeverageTypes } from "../../graphql/queries";
 
 const AddBeerInfo = ({ pixels, canvasRef }) => {
-  const { isPhotoCropped } = useContext(AppContext);
+  const { isPhotoCropped, cropDetails } = useContext(AppContext);
   const history = useHistory();
   const { data, loading } = useQuery(getBeverageTypes);
+
+  const beverageTypes = loading ? [] : data.getBeverageTypes.map((e) => e.name);
+  const assortments =
+    loading && formInfo.beverageType === ""
+      ? []
+      : data.getBeverageTypes
+          .map(({ name, assortments }) => {
+            if (name === formInfo.beverageType)
+              return assortments.map((e) => e.name);
+          })
+          .flat();
 
   const [step, setStep] = useState(1);
   const [formInfo, setFormInfo] = useState({
@@ -32,9 +43,7 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
   const onInputChange = (key) => (e) =>
     setFormInfo({ ...formInfo, [key]: e.target.value });
 
-  const onSubmit = () => {};
-
-  console.log(formInfo);
+  console.log(cropDetails);
   return (
     <Container>
       {isPhotoCropped && <Steps step={step} />}
@@ -57,24 +66,13 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
                 isSelect
                 text="What type of beverage is it?"
                 onChange={onInputChange("beverageType")}
-                options={
-                  loading ? [] : data.getBeverageTypes.map((e) => e.name)
-                }
+                options={beverageTypes}
               />
               <Input
                 isSelect
                 text="What assortment does it have?"
                 onChange={onInputChange("assortment")}
-                options={
-                  loading && formInfo.beverageType === ""
-                    ? []
-                    : data.getBeverageTypes
-                        .map(({ name, assortments }) => {
-                          if (name === formInfo.beverageType)
-                            return assortments.map((e) => e.name);
-                        })
-                        .flat()
-                }
+                options={assortments}
               />
             </>
           )}
