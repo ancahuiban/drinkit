@@ -48,12 +48,12 @@ const BeerList = () => {
                 <Beverage>
                   <BeverageHeader>
                     <BeverageImg src={UserPlaceholder} />
+                    <Rating />
                   </BeverageHeader>
                   <BeverageInfo>
                     <Subtitle text={name} />
                     <>
                       {edition} · {origin} · {alcoholPercentage}% ABV
-                      <Rating rate="2" />
                     </>
                   </BeverageInfo>
                 </Beverage>

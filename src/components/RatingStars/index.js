@@ -10,7 +10,7 @@ export const Rating = ({ disabled }) => {
   for (let i = 0; i < 5; i++) {
     stars.push(
       <Star
-        className={rating >= i && rating != null ? ` is-selected` : ``}
+        isSelected={rating >= i && rating != null}
         onTouchStart={() => rate(i)}
       >
         ★

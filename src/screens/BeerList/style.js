@@ -114,12 +114,17 @@ export const BeverageHeader = styled.div`
   ${({
     theme: {
       colors: { lightPrimary },
-      spaces: { x1 },
+      spaces: { x2 },
       boxShadow: { cardShadow },
     },
   }) => `
   height: 40%;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 ${x2};
   `}
 `;
 

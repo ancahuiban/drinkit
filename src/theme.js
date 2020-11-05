@@ -7,7 +7,7 @@ export const theme = {
     textSecondary: "#D2CFC8",
     textPrimary: "#212121",
     textLight: "#F3EEE8",
-    accent: "#E6EB15",
+    accent: "#DDE815",
   },
   spaces: {
     x0: "0",
