@@ -27,11 +27,11 @@ const BeerList = () => {
         <SearchBar>
           <Search type="search" placeholder="Search drink" />
           <ActionButton>
-            <ActionIcon as={FilterIcon} />
+            <ActionIcon as={SearchIcon} />
           </ActionButton>
         </SearchBar>
         <ActionButton>
-          <ActionIcon as={SearchIcon} />
+          <ActionIcon as={FilterIcon} />
         </ActionButton>
       </Header>
       <Beverages>

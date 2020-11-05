@@ -31,31 +31,45 @@ export const Header = styled.div`
 export const SearchBar = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 
 export const Search = styled.input`
   ${({
     theme: {
       spaces: { x1, x6 },
-      colors: { darkPrimary },
+      colors: { darkPrimary, primary, accent },
+      fontWeight: { bold, regular },
     },
   }) => `
   height: ${x6};
   border: none;
-  width: 100%;
+  width: 70%;
   margin-right: ${x1};
+  border-bottom: 3px solid ${darkPrimary};
+  outline-color: ${accent};
+  font-weight: ${bold};
+  font-size: 18px;
+
+  &::placeholder{
+    color:${primary};
+    font-weight: ${regular};
+  }
   `}
 `;
 export const ActionButton = styled.button`
   ${({
     theme: {
       spaces: { x1, x6 },
-      colors: { darkPrimary },
+      colors: { primary, accent, lightPrimary },
     },
   }) => `
   display: flex;
-  color: ${darkPrimary};
   height: ${x6};
+  border: 3px solid ${primary};
+  background-color: ${accent};
+  cursor: pointer;
+  border-radius: calc(${x1}/2);
   `}
 `;
 
@@ -67,7 +81,8 @@ export const ActionIcon = styled.i`
     },
   }) => `
   color: ${darkPrimary};
-  width: ${x5};`}
+  width: ${x5};
+  `}
 `;
 
 export const Beverages = styled.div``;
