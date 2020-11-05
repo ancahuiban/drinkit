@@ -1,10 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 import { CanvasContainer, Canvas, Container, ButtonContainer } from "./style";
 import {
   Subtitle,
   PrimaryButton as Button,
   Steps,
+  Title,
   // Input,
   // Select,
 } from "../../components";
@@ -19,6 +20,14 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
   const history = useHistory();
   const { data, loading } = useQuery(getBeverageTypes);
 
+  const [formInfo, setFormInfo] = useState({
+    beverageType: "",
+    brandName: "",
+    edition: "",
+    origin: "",
+    alcoholPercentage: null,
+    score: null,
+  });
   const beverageTypes = loading ? [] : data.getBeverageTypes.map((e) => e.name);
   const assortments =
     loading && formInfo.beverageType === ""
@@ -31,14 +40,6 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
           .flat();
 
   const [step, setStep] = useState(1);
-  const [formInfo, setFormInfo] = useState({
-    beverageType: "",
-    brandName: "",
-    edition: "",
-    origin: "",
-    alcoholPercentage: null,
-    score: null,
-  });
 
   const onInputChange = (key) => (e) =>
     setFormInfo({ ...formInfo, [key]: e.target.value });
@@ -46,6 +47,7 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
   console.log(cropDetails);
   return (
     <Container>
+      <Title text="Add a beverage" align="left" />
       {isPhotoCropped && <Steps step={step} />}
       {step === 1 && (
         <CanvasContainer isCropped={isPhotoCropped}>

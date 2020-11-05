@@ -4,7 +4,7 @@ import { Check } from "@styled-icons/boxicons-regular/Check";
 export const Container = styled.div`
   ${({
     theme: {
-      spaces: { x6 },
+      spaces: { x2, x6 },
       boxShadow: { menuMobile },
     },
   }) => `
@@ -14,6 +14,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: row;
   height: ${x6};
+  padding: ${x2} 0;
   width: 100%;
   `}
 `;
