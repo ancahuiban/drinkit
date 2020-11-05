@@ -1,4 +1,10 @@
 import React from "react";
+import { Container } from "./style";
+import { Title } from "../../components";
 
-const Dashboard = () => <div> Dashboard </div>;
+const Dashboard = () => (
+  <Container>
+    <Title text="Dashboard" align="left" />
+  </Container>
+);
 export default Dashboard;

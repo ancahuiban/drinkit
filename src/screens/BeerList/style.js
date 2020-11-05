@@ -85,5 +85,24 @@ export const ActionIcon = styled.i`
   `}
 `;
 
-export const Beverages = styled.div``;
-export const Beverage = styled.div``;
+export const Beverages = styled.div`
+  ${({
+    theme: {
+      spaces: { x1 },
+    },
+  }) => `
+  padding: ${x1};
+  `}
+`;
+export const Beverage = styled.div`
+  ${({
+    theme: {
+      colors: { lightPrimary },
+      spaces: { x1 },
+    },
+  }) => `
+  background-color: white;
+  height: 100px;
+  border-radius: ${x1};
+  `}
+`;
