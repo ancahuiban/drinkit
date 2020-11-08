@@ -7,6 +7,7 @@ export const Rating = ({ rating, setRating }) => {
   for (let i = 0; i < 5; i++) {
     stars.push(
       <Star
+        key={i}
         isSelected={rating >= i && rating != null}
         onTouchStart={() => setRating(i)}
       >

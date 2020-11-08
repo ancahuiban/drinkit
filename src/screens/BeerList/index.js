@@ -44,11 +44,11 @@ const BeerList = () => {
         {loading
           ? []
           : data.getBeverages.map(
-              ({ name, origin, edition, alcoholPercentage }) => (
+              ({ name, origin, edition, alcoholPercentage, score }) => (
                 <Beverage>
                   <BeverageHeader>
                     <BeverageImg src={UserPlaceholder} />
-                    <Rating />
+                    <Rating rating={score} />
                   </BeverageHeader>
                   <BeverageInfo>
                     <Subtitle text={name} />
