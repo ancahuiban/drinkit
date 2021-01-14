@@ -13,3 +13,5 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 See the deployed app at : https://drin-kit.herokuapp.com/
+
+NOTE: this project is on-hold so it misses features. Will plan to continue it soon :)
