@@ -26,6 +26,7 @@ import UserPlaceholder from "../../assets/UserPlaceholder.png";
 
 const BeerList = () => {
   const { data, loading } = useQuery(getBeverages);
+
   return (
     <Container>
       <Title text="Beverages list" align="left" />
@@ -43,22 +44,22 @@ const BeerList = () => {
       <Beverages>
         {loading
           ? []
-          : data.getBeverages.map(
-              ({ name, origin, edition, alcoholPercentage, score }) => (
-                <Beverage>
-                  <BeverageHeader>
-                    <BeverageImg src={UserPlaceholder} />
-                    <Rating rating={score} />
-                  </BeverageHeader>
-                  <BeverageInfo>
-                    <Subtitle text={name} />
-                    <>
-                      {edition} · {origin} · {alcoholPercentage}% ABV
+          : data?.getBeverages.map(
+            ({ name, origin, edition, alcoholPercentage, score }, id) => (
+              <Beverage key={id}>
+                <BeverageHeader>
+                  <BeverageImg src={UserPlaceholder} />
+                  <Rating rating={score} />
+                </BeverageHeader>
+                <BeverageInfo>
+                  <Subtitle text={name} />
+                  <>
+                    {edition} · {origin} · {alcoholPercentage}% ABV
                     </>
-                  </BeverageInfo>
-                </Beverage>
-              )
-            )}
+                </BeverageInfo>
+              </Beverage>
+            )
+          )}
       </Beverages>
     </Container>
   );

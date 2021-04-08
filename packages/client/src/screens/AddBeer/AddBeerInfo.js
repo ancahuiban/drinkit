@@ -28,16 +28,16 @@ const AddBeerInfo = ({ pixels, canvasRef }) => {
     alcoholPercentage: null,
     score: null,
   });
-  const beverageTypes = loading ? [] : data.getBeverageTypes.map((e) => e.name);
+  const beverageTypes = loading ? [] : data?.getBeverageTypes.map((e) => e.name) ?? [];
   const assortments =
     loading && formInfo.beverageType === ""
       ? []
-      : data.getBeverageTypes
-          .map(({ name, assortments }) => {
-            if (name === formInfo.beverageType)
-              return assortments.map((e) => e.name);
-          })
-          .flat();
+      : data?.getBeverageTypes
+        .map(({ name, assortments }) => {
+          if (name === formInfo.beverageType)
+            return assortments.map((e) => e.name);
+        })
+        .flat() ?? []
 
   const [step, setStep] = useState(1);
 

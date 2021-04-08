@@ -7,7 +7,7 @@ export const Steps = ({ step }) => {
     <Container>
       <Line />
       {steps.map((el, id) => (
-        <Dot dots={steps.length}> {el <= step ? <Checked /> : el} </Dot>
+        <Dot key={id} dots={steps.length}> {el <= step ? <Checked /> : el} </Dot>
       ))}
     </Container>
   );
