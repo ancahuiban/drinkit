@@ -6,7 +6,8 @@
   ],
   "scripts": {
     "dev": "concurrently --kill-others-on-fail -n \"Server,Client\" -c \"bgCyan,bgMagenta\" \"yarn workspace client dev\" \"yarn workspace server dev\"",
-    "start": "concurrently --kill-others-on-fail \"yarn workspace client start\" \"yarn workspace server start\""
+    "start": "yarn workspace server start",
+    "heroku-postbuild": "yarn workspaces run build"
   },
   "dependencies": {
     "concurrently": "^6.0.1"

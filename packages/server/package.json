@@ -4,12 +4,14 @@
   "private": "true",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo Placeholder"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "mongoose": "^5.12.3"
   },
   "devDependencies": {
